@@ -44,16 +44,16 @@ const faqData: FaqItem[] = [
   { question: "Can I use the generated images commercially?", answer: "Commercial usage rights depend on the subscription plan you choose. Our Pro and Studio plans usually include a commercial license." }
 ];
 
-function ScratchToRevealDemo() {
+function ScratchToRevealDemo({ image = "/images/drawing.jpg", revealImage = "/images/drawing1.jpg" }) {
   return (
-    <div className="relative">
+    <div className="relative w-[400px] h-[300px] flex items-center justify-center">
       <ScratchToReveal
         width={400}
         height={300}
         minScratchPercentage={60}
-        className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100"
-        image="/images/drawing.jpg"
-        revealImage="/images/drawing1.jpg"
+        className="overflow-hidden rounded-2xl border-2 bg-gray-100"
+        image={image}
+        revealImage={revealImage}
       />
     </div>
   );
@@ -250,17 +250,17 @@ const Home: React.FC = () => {
       {/* Transform sketches and SketchUp Section */}
       <section className="py-16 md:py-24 bg-gray-900">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-white">Transform your sketches and SketchUp into photorealistic renders</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center justify-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-white">Transform your sketches into photorealistic renders</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="flex flex-col items-center">
               <ScratchToRevealDemo />
-              <h3 className="text-2xl font-semibold text-white mb-2 mt-6">Your Sketches, Reimagined</h3>
-              <p className="text-base text-gray-300 mb-2">Use advanced AI technology to add vivid details, rich colors, and sophisticated layouts to your sketches. Breathe new life into your images！</p>
+              <h3 className="text-2xl font-semibold text-white mt-6 mb-2">Your Sketches, Reimagined</h3>
+              <p className="text-base text-gray-300 mb-2 text-center max-w-md">Use advanced AI technology to add vivid details, rich colors, and sophisticated layouts to your sketches. Breathe new life into your images!</p>
             </div>
             <div className="flex flex-col items-center">
-              <GlobeDemo />
-              <h3 className="text-2xl font-semibold text-white mb-3 mt-10">Elevate Your 3D Models</h3>
-              <p className="text-lg text-gray-300 mb-8 mt-2">
+              <ScratchToRevealDemo image="/images/sketches.jpg" revealImage="/images/sketches1.jpg" />
+              <h3 className="text-2xl font-semibold text-white mt-6 mb-2">Elevate Your 3D Models</h3>
+              <p className="text-base text-gray-300 mb-2 text-center max-w-md">
                 Take your SketchUp or other 3D model screenshots to the next level. Our AI enhances them with realistic lighting, textures, and decor, creating high-impact visuals for presentations or personal projects.
               </p>
             </div>
