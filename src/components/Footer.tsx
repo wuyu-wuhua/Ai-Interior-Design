@@ -96,7 +96,6 @@ const Footer: React.FC = () => {
         {/* Bottom Footer */}
         <div className="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
           <p className="mb-1">Contact Us: ytsgabcde53@2925.com</p>
-          <p className="mb-2">渝ICP备2023003099号</p>
         </div>
       </div>
     </footer>
